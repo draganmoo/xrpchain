@@ -4,7 +4,7 @@ const Nodes = require('../models/nodes');
 
 const util = require('util')
 const { nanoid } = require('nanoid')
-const gc = require('../../config/config')
+const gc = require('../config/config')
 const bucket = gc.bucket('moo-demo-xrpl')
 const {
     format
@@ -79,6 +79,7 @@ class BlockchainController {
                 // Add to chain
                 req.body.mediaobj = encryptString(publicUrl);
                 req.body.key = encryptString(genFileEncKey);
+                req.body.data = encryptString(JSON.stringify({filename:req.file.originalname, filesize: req.file.size, type: req.file.mimetype}))
                 if (this.medias.add(req, res)) {
                     res.json(this.blockchain.mine(this.medias, res));
                 } else {

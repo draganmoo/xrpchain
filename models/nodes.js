@@ -3,7 +3,7 @@ const Blockchain = require('./blockchain');
 
 class Nodes {
     constructor(url, port) {
-        const nodes = require(process.env.NODE_ENV == 'production' ? '../../config/nodes.prod.json' : '../../config/nodes.json');
+        const nodes = require(process.env.NODE_ENV == 'production' ? '../config/nodes.prod.json' : '../config/nodes.json');
         const currentURL = url + ':' + port;
         this.list = [];
 
