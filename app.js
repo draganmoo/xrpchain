@@ -1,10 +1,18 @@
 const express = require('express');
+const multer  = require('multer')
 const blockchainController = require('./src/controllers/blockchain');
 
 const url = process.env.URL || '0.0.0.0';
 const port = process.env.PORT || 4500;
 
 let app = express();
+
+const multerMid = multer({
+  storage: multer.memoryStorage(),
+})
+
+app.disable('x-powered-by')
+app.use(multerMid.single('file'))
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true

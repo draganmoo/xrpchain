@@ -12,7 +12,6 @@ class Medias {
             let tx = new Media(req.body.user, req.body.mediaobj, req.body.key, req.body.data);
             this.list.push(tx);
             response = true;
-
         } catch (ex) {
             console.log({
                 'error': ex.message
