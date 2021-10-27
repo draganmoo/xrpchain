@@ -65,9 +65,8 @@ class Blockchain {
         return hash;
     }
 
-    mine(transactions, res) {
+    mine(transactions) {
         if (transactions.list.length == 0) {
-            res.status(500);
             return {
                 error: 'No data to be mined'
             };

@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const MediaData = require('../models/mediaData');
 
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr(process.env.stringEncKey || 'thisisaSecret');
+
+function decryptString(string) {
+    const decryptedString = cryptr.decrypt(string);
+    return decryptedString;
+}
 
 router.get('/', (req, res, next) => {
 	return res.render('index.ejs');
@@ -34,6 +42,7 @@ router.post('/', (req, res, next) => {
 							password: personInfo.password,
 							passwordConf: personInfo.passwordConf,
 							wallet: "",
+							credit: 10,
 							type : "free"
 						});
 
@@ -82,7 +91,19 @@ router.get('/profile', (req, res, next) => {
 		if (!data) {
 			res.redirect('/');
 		} else {
-			return res.render('data.ejs', { "name": data.username, "email": data.email, "reciving_wallet" : "rBsJ3tpLtus9EFnp5zzJJwEcVhTdyvDawu" });
+			let allMedia = [];
+			MediaData.find({ userId: req.session.userId+"" }, (err, medias) => {
+				medias.forEach(media => {
+					allMedia.push({
+						name : decryptString(media.fileName),
+						size : decryptString(media.fileSize),
+						type : decryptString(media.fileType),
+						block : (media.blockIndex),
+					})
+				});
+				return res.render('data.ejs', { "name": data.username, "email": data.email,"credit": data.credit, "reciving_wallet" : "rBsJ3tpLtus9EFnp5zzJJwEcVhTdyvDawu", "medias" : allMedia });
+			});
+			
 		}
 	});
 });

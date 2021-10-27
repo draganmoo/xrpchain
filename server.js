@@ -59,6 +59,8 @@ app.get('/mine', controller.mine.bind(controller));
 app.get('/blockchain/last-index', controller.getBlockLastIndex.bind(controller));
 app.get('/blockchain/:idx', controller.getBlockByIndex.bind(controller));
 app.get('/blockchain', controller.getBlockchain.bind(controller));
+app.get('/download-enc/:id', controller.download_enc.bind(controller));
+app.get('/download/:id', controller.download.bind(controller));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
