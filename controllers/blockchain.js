@@ -53,11 +53,7 @@ function decryptFile(chunk, password) {
     return result;
 }
 
-const options = {
-    version: 'v4',
-    action: 'read',
-    expires: Date.now() + 15 * 60 * 1000, // 15 minutes
-  };
+
 
 
 class BlockchainController {
@@ -68,6 +64,11 @@ class BlockchainController {
     }
 
     async download_enc (req, res){
+        let options = {
+            version: 'v4',
+            action: 'read',
+            expires: Date.now() + 15 * 60 * 1000, // 15 minutes
+          };
         let getBlock = this.blockchain.getBlockByIndex(req.params.id)
         let mediaurl = decryptString(getBlock.medias[0].mediaobj);
         let getKey = decryptString(getBlock.medias[0].key);
@@ -95,6 +96,11 @@ class BlockchainController {
     }
 
     async download(req, res){
+        let options = {
+            version: 'v4',
+            action: 'read',
+            expires: Date.now() + 15 * 60 * 1000, // 15 minutes
+          };
         let getBlock = this.blockchain.getBlockByIndex(req.params.id)
         let mediaurl = decryptString(getBlock.medias[0].mediaobj);
         let getKey = decryptString(getBlock.medias[0].key);
