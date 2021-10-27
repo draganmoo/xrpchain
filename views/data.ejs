@@ -14,10 +14,6 @@
 	<div class="col-md-6 col-md-offset-3 form-card">
 		<br>
 		<div>
-			Pay Here : <%= reciving_wallet %>
-		</div>
-		<br>
-		<div>
 			<p>Profile</p>
 		</div>
 		<div>
@@ -32,7 +28,14 @@
 					<tr>
 						<td>Credit Left </td>
 						<td>
-							<%= credit %> <a href="/buy-credit">Buy</a>
+							<%= credit %> <div>
+								<a class="buy-with-crypto"
+								   href="https://commerce.coinbase.com/checkout/c539930b-a9a9-4d81-91d3-58208776bf23">
+								  Buy with Crypto
+								</a>
+								<script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+								</script>
+							  </div>
 						</td>
 					</tr>
 					<tr>

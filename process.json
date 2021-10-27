@@ -1,0 +1,9 @@
+{
+    "apps" : [{
+      "name"        : "ChainVault",
+      "script"      : "server.js",
+      "watch"       : ["bin", "./"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "ignore_watch" : ["logs", "storage", "newrelic_agent.log", "*.log"]
+    }]
+}
