@@ -1,6 +1,6 @@
 # xrpchain
 
-Demo : https://afternoon-island-46171.herokuapp.com/
+Demo : https://xrpvault.moogruppen.no/
 
 # Install
 ```
