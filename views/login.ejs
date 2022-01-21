@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Register App</title>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+
+	<div class="col-md-4 col-md-offset-4 form-card">
+		<img src="/logo.png" style="padding-top:40px; margin:auto; width: 200px;" />
+		<div>
+			
+			<p>Login</p>
+		</div>
+		<div class="form-group ">
+			<button id="btn-login-moralis" class="btn btn-warning" style="margin-top:10px;margin-bottom:10px;">Metamask Login</button>
+			<form id="frm-login" method="post">
+				<input type="text" name="email" pattern="[-!#$%&'*+\/0-9=?ก-๙A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?ก-๙A-Z^_a-z`{|}~])*@[ก-๙a-zA-Z0-9](-*\.?[ก-๙a-zA-Z0-9])*\.[ก-๙a-zA-Z](-?[ก-๙a-zA-Z0-9])+$" placeholder="E-mail" required="" class="form-control"><br />
+				<input type="password" name="password" placeholder="Password" required="" class="form-control"><br />
+				<input type="submit" value="Login" class="btn btn-success">
+			</form>
+		</div>
+		<div class="mssg bg-danger">
+			<span id="check"></span>
+		</div>
+		<div id="LangTable"><a href="/profile" id="aa"></a>
+		</div>
+		<div><span>Did you forget password? </span><a href="/forgetpass">click here</a>
+		</div>
+		<div id="LangTable"><span>Do you want to register a new Account? </span><a href="/register">click here</a>
+		</div>
+	</div>
+</body>
+
+</html>

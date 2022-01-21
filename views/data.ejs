@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Register App</title>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+	<div class="col-md-6 col-md-offset-3 form-card">
+		<img src="/logo.png" style="padding-top:40px; margin:auto; width: 200px;" />
+		<br>
+		<div>
+			<p>Profile</p>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<center>
+					<table class="table table-hover">
+						<tr>
+							<td>Name </td>
+							<td>
+								<%= name %>
+							</td>
+						</tr>
+						<tr>
+							<td>Wallet (ETH)</td>
+							<td>
+								<%= wallet %>
+							</td>
+						</tr>
+						<tr>
+							<td>XRP Wallet</td>
+							<td>
+								<%= xrp_wallet %>
+							</td>
+						</tr>
+						<tr>
+							<td>Subscription Type </td>
+							<td>
+								Free
+							</td>
+						</tr>
+					</table>
+				</center>
+			</div>
+			
+		</div>
+		<div class="row">
+			<center class="col-md-8 col-md-offset-2">
+				<table class="table table-hover">
+					<form method="POST" action="/upload-file" enctype="multipart/form-data">
+					<tr>
+						<td>Upload</td>
+						<td><input type="file" name="file" /></td>
+						<td><input type="submit" name="btn_upload_profile_pic" value="Upload" /></td>
+					</tr>
+					</form>
+				</table>
+			</center>
+		</div>
+		<div>
+			<center>
+				<table class="table table-hover text-center">
+					<tr>
+						<td>Name </td>
+						<td>Size</td>
+						<td>Type</td>
+						<td>NFT Validated</td>
+						<td>Encrypted</td>
+						<td>Decrypted</td>
+						<td>Pay</td>
+						<td>Tx Check</td>
+					</tr>
+					<% medias.forEach(function(media){ %>
+						<tr>
+							<td><%= media.name %> </td>
+							<td><%= media.type %> </td>
+							<td><%= media.size %> </td>
+							<td><%= media.nft_validated %> </td>
+							<td><a href="/download-enc/<%= media.unique_id %>">Download</a></td>
+							<td><a href="/download/<%= media.unique_id %>">Download</a></td>
+							<% if (media.nft_validated == "Yes") { %>
+								<td>Paid!</td>
+							<%} else { %>
+								<td><a href="/pay/<%= media.unique_id %>">Pay</a></td>
+							<% } %>
+							<% if (media.nft_check_link != "") { %>
+								<td><a href="<%= media.nft_check_link %>" target="_blank">Check</a></td>
+							<%} else { %>
+								<td>N/A</td>
+							<% } %>
+							
+						</tr>
+					<% }) %>
+				</table>
+			</center>
+		</div>
+		<div class="abc" id="LangTable">
+			<a href="/logout" id="logout-moralis">Logout</a>
+		</div>
+	</div>
+</body>
+
+</html>

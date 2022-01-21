@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "metal-complex-281112",
+  "private_key_id": "ec6e0b73368d776662202093385be518d9f45236",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDE3dn4b4t1v2K7\nJTutFYL+bfiGVm7890b9Y3tdGFrhQMT6qF04wf9UUQfOP9NT6qlJrBCVj3TQ5h51\nEzOmaUdVgABOUHlUuyb7yRrg8Q2UqfMa9huBO4Decb+iLMRvKkK/P+Z66gv7PLSn\niCFaXu6tCMcdaJ9XMGpF9s3k5CL1IbKMBlpwHeJ/a+IKBWttvAwumGmbghMRZntO\ntbYeg5oUkWYO+gP/uoQJRKlsERhjYBX1cBTEhZcbWUSSn5IxM4g7+WIx31IoVvMs\ne8zfy9uZkAG0RZ48VvQHmrw9MKWaz/1uFRs1+tsxVnPHaUo+7dXzsgoy07Nelfls\nPviYf30RAgMBAAECggEABwRVEshHiVIxtsPRSmZfE5pn+oJRzQuTjMAvL0qZISif\nyMMn5PgxtY+4knD3E2l0oKEM24bYKiK8pM3DGFgt7CnOgPwYcgUkcuKodgpzgmgz\nF4O8h9z/Bza41tMHiqKQC9zvRjPpysn/cq39CdmCwnlCzx0Zulfp/s3I6ZLZ3eC2\nRMv+I/V+ZuZ590C1O2ILyPh94KbiDYGKSW2pfajABg3VQvtWha5yro518gOy5Ndi\nZE2Xj36oQ745Vn/rKOiZvBOOd4ynwZIiCO4vCM7m1utEx8Mhl70WEX/N9ApDyjUp\nFIFfshFZ1q1rr5VXI68gQxu0QitC+GFO2qodPCjpYQKBgQDrhL5XXyBfT+tSwu3M\nZ4WsF0X0kZK9I6LwcVXWYB1TYwU6gUe9K6mAgCRxiLlfCTAIw/oe7BZKgQ+qMT3r\nkPFX/pQGGgZoXa4L7n05ftvieyIiEUvqSQsUcgpmTjAsmyXuETl+EflkQHZSYw2q\nQevhr9BU09o2GsPI2uQB20EaMQKBgQDV/J2I6u73NQXDScke6jxpchh3JXuAfXFC\n9k/xrn74FvFSu3zyL9+hVXqMnnuJUbf3zV7u/kgh/TrR3v5iWT3nzrseF/ULfmjc\n0vCyFDkhT5G//RHXvxVmYT2gV9D9cZAtsBWWJZi3+UrjVAoecOnEgx60RLfem7Cv\nBrfVX2j44QKBgQDVSb7y80Qm7QKJTdz7SxlEc0M4LIl+XoKWS51X6m1Ech1vEVs9\nlwgHRoU6iH6P8YsdtRWT4WyChoUANV4FMptOfE/jgrgg1g3j4lRnuFo7rhWIUq+0\neffdyTVf1xlLnCnqgpDVekOnpbVCAVCDyvVqysTZvY4Vh4GdKZZpk/1OUQKBgEMK\n+3xrRuVy2lReKMIj1zueQKYLu079fl/hdhideDBYV9F45mOmtiUA9/1YphHW5ZGg\n6Y5tYsIraaNZf0/m7+tRrPR3wxGP0GDnQfw5M9EI8fw52L5EovrJmppDCTpuuyJl\nWc4KB3gUhe8FZIo3DDbCcfs+0HDRTKD5tN0IIIZhAoGAGDnKCvWzph2jbudqI4YB\nZqO6MIuyomhkx1EJtk7/UT4wcTa1ekx8nJz7J5MKB3qRxCdBcIWpOCVW+nioQAq2\nAS3LCF+S1Lsjg6tYy36VxWzWRMmckBKF4vWKBIFtmfyueV4a+vj8zPHs4bH3stuZ\nEAz572UEiVyrNUxXva2Fzjo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "moo-demo-storageacc@metal-complex-281112.iam.gserviceaccount.com",
+  "client_id": "100943196212946385350",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/moo-demo-storageacc%40metal-complex-281112.iam.gserviceaccount.com"
+}

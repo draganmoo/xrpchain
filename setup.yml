@@ -1,0 +1,52 @@
+# log settings for script
+logging:
+  logPath: creation.log
+  logLevel: debug
+  maxSize: 5242880
+  maxFiles: 5
+  colorize: true
+
+# config options for IPFS
+ipfs:
+  # path of IPFS node setup/configuration
+  node: ipfs-node
+
+# config options for XRP
+xrp:
+  # wss://s.altnet.rippletest.net is the XRP testnet
+  network: wss://s.altnet.rippletest.net
+
+
+# deploy options
+
+# - AWS s3 / Digitial Ocean Spaces
+# -> Its important to ensure your S3 / Spaces DNS matches your base webHostingURI: subdomain.example.com
+# -> Ensure your permissions are correct for uploading content!
+
+webbucket:
+  enabled: false
+  bucket: rainwalkerfs
+  endpoint: sgp1.digitaloceanspaces.com
+  accessKeyId: 2O3NVZT2FLFVHVYZRCBL
+  secretAccessKey: +ADBfwDtHY8wzFArLSC0+IR6hxVZeYCX2VCUAYLV/CA
+  # Timeout in minutes
+  timeout: 10
+  # Helps ensure large files have time to upload
+  # - before continuing in the script logic.
+  # - disable to allow sync uploading
+  disableSyncUpload: true
+
+
+
+# - Pinata Integration for AutoPinning
+# - Only requires PinByHash
+# https://pinata.cloud/
+pinatacloud:
+  enabled: true
+  accessKey: ede5753d2f137ba4e70a
+  secretKey: 5c71e6df039bad6db15e812160e8313e69de46d0c77b4c50fd7c38aa9e13d0fe
+
+
+system:
+  exitEnabled: true
+  exitScriptTTL: 30 #Minutes

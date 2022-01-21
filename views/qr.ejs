@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Register App</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Bootstrap Material Design -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+	<link rel="stylesheet" href="/css/main.css">
+	<script type="text/javascript" src="/js/main.js"></script>
+
+</head>
+
+<body>
+
+	<div class="col-md-4 col-md-offset-4 form-card">
+		<div>
+			<p>20 XRP</p>
+			<img id="spinner" style="display:none;"
+				src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" />
+		</div>
+		<img src="<%=src%>" alt="QR Code Image">
+		<p>Scan the QR Code to send payment</p>
+		<a href="<%=link%>" target="_blank"><button type="button" class="btn btn-primary">Check transaction</button></a>
+		<button type="button" id="validate-trans" class="btn btn-primary">Validate transaction</button>
+		<a href="/profile"><button type="button" class="btn btn-primary">Back</button></a>
+		<br>
+		<div>
+			<pre id="validation-status"></pre>
+		</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(() => {
+		function validateTrasaction(id) {
+			setInterval(function () {
+				$("#spinner").show()
+				$.get("/validate/" + id, function (data, status) {
+					$("#validation-status").html(JSON.stringify(data));
+					$("#spinner").hide()
+				});
+			}, 5000);
+		}
+
+		$('#validate-trans').first().on('click', function () {
+			$("#spinner").show()
+			$.get("/validate/" + id, function (data, status) {
+				$("#validation-status").html(JSON.stringify(data));
+				$("#spinner").hide()
+			});
+		})
+		validateTrasaction("<%=id%>")
+
+	});
+</script>
+
+</html>
